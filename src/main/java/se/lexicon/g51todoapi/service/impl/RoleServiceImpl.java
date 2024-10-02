@@ -1,4 +1,4 @@
-package se.lexicon.g51todoapi.service;
+package se.lexicon.g51todoapi.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -6,6 +6,7 @@ import se.lexicon.g51todoapi.converter.RoleConverter;
 import se.lexicon.g51todoapi.domain.dto.RoleDTOView;
 import se.lexicon.g51todoapi.domain.entity.Role;
 import se.lexicon.g51todoapi.repository.RoleRepository;
+import se.lexicon.g51todoapi.service.RoleService;
 
 import java.util.ArrayList;
 import java.util.List;
