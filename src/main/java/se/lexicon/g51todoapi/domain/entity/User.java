@@ -12,7 +12,7 @@ import java.util.Set;
 @NoArgsConstructor
 @ToString(exclude = "roles")
 @EqualsAndHashCode(exclude = "roles")
-
+@Builder
 @Entity
 public class User {
     @Id
