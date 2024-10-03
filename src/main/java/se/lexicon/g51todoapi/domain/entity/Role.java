@@ -9,7 +9,7 @@ import lombok.*;
 @NoArgsConstructor
 @ToString
 @EqualsAndHashCode
-
+@Builder
 @Entity
 public class Role {
     @Id
