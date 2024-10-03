@@ -1,5 +1,6 @@
 package se.lexicon.g51todoapi.converter;
 
+import se.lexicon.g51todoapi.domain.dto.RoleDTOForm;
 import se.lexicon.g51todoapi.domain.dto.RoleDTOView;
 import se.lexicon.g51todoapi.domain.entity.Role;
 
@@ -10,7 +11,7 @@ public class RoleConverterImpl implements RoleConverter {
     }
 
     @Override
-    public Role toEntity(RoleDTOView dto) {
+    public Role toEntity(RoleDTOForm dto) {
         return new Role(dto.getId(), dto.getName());
     }
 }

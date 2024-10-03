@@ -1,6 +1,7 @@
 package se.lexicon.g51todoapi.converter;
 
 import org.springframework.stereotype.Component;
+import se.lexicon.g51todoapi.domain.dto.RoleDTOForm;
 import se.lexicon.g51todoapi.domain.dto.RoleDTOView;
 import se.lexicon.g51todoapi.domain.entity.Role;
 
@@ -8,5 +9,5 @@ import se.lexicon.g51todoapi.domain.entity.Role;
 public interface RoleConverter {
     RoleDTOView toRoleDTO(Role entity);
 
-    Role toEntity(RoleDTOView dto);
+    Role toEntity(RoleDTOForm dto);
 }
