@@ -2,6 +2,7 @@ package se.lexicon.g51todoapi.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import se.lexicon.g51todoapi.domain.dto.RoleDTOView;
 import se.lexicon.g51todoapi.domain.dto.UserDTOForm;
 import se.lexicon.g51todoapi.domain.dto.UserDTOView;
@@ -33,6 +34,7 @@ public class UserServiceImpl implements UserService {
 
 
     @Override
+    @Transactional
     public UserDTOView register(UserDTOForm userDTOForm) {
         //1. Check parameter
         if (userDTOForm == null) throw new IllegalArgumentException("User form cannot be null");
@@ -91,6 +93,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    @Transactional
     public void disableByEmail(String email) {
         isEmailTaken(email);
         userRepository.updateExpiredByEmail(email, true);
@@ -98,6 +101,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    @Transactional
     public void enableByEmail(String email) {
         isEmailTaken(email);
         userRepository.updateExpiredByEmail(email, false);
