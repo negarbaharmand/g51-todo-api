@@ -1,5 +1,8 @@
 package se.lexicon.g51todoapi.controller;
 
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,6 +42,12 @@ public class UserController {
         return ResponseEntity.status(HttpStatus.OK).body(responseBody);
     }
 
+    //Swagger UI annotations
+    @Operation(summary = "Register a new user", description = "Creates a new user in the system")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "201", description = "User created successfully"),
+            @ApiResponse(responseCode = "400", description = "Invalid input")
+    })
     @PostMapping
     public ResponseEntity<UserDTOView> doRegister(@RequestBody @Valid UserDTOForm userDTOForm) {
         System.out.println("DTO Form: " + userDTOForm);
