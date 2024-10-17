@@ -18,6 +18,7 @@ import se.lexicon.g51todoapi.service.UserService;
 import java.util.HashSet;
 import java.util.Set;
 
+@CrossOrigin(origins = "http://localhost:3000") // Replace with your frontend URL
 @RequestMapping("/api/v1/users")
 @RestController
 @Validated
